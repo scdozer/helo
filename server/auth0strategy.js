@@ -1,7 +1,7 @@
 const Auth0Strategy = require('passport-auth0');
 const config = require('./config');
 let app = require('./index');
-console.log('app', app);
+// console.log('app', app);
 module.exports = new Auth0Strategy({
   domain:       config.domain,
   clientID:     config.clientId,

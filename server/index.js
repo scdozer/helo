@@ -11,11 +11,12 @@ const Auth0Strategy = require('passport-auth0');
 const port = 3005;
 
 
-const app = module.exports = express();
+var app = module.exports = express();
 const strategy = require('./auth0strategy');
 
-app.use( bodyParser.json() );
 app.use ( cors() );
+app.use( bodyParser.json() );
+
 
 app.use(session({
   secret: 'secretsecretsecret',
@@ -30,7 +31,7 @@ passport.use(strategy);
 
 
 // console.log(process.env);
-massive(process.env.REACT_APP_CONNECTION_STRING).then( db => {
+massive(process.env.CONNECTION_STRING).then( db => {
   // console.log(db)
     app.set('db', db)
 })
