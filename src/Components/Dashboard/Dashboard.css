@@ -1,15 +1,22 @@
-.Dashboard-Main {
-    width: 100%;
-    float: left;
-    padding-top: 60px;
+.Dashboard {
+    padding-top: 70px;
     display: flex;
     justify-content: center;
+    width: 100%;
+    float: left;
 }
 
 .Dashboard-content {
     display: flex;
+    flex-direction: column;
     margin-top: 30px;
-    width: 800px;
+    width: 850px;
+    margin-bottom: 50px;
+}
+
+.Dashboard-header {
+    display: flex;
+    margin-bottom: 20px;
 }
 
 .Dashboard-user {
@@ -31,6 +38,7 @@
 .Dashboard-user-info-name {
     margin-bottom: 15px;
     font-size: 25px;
+    font-weight: bold;
 }
 
 .Dashboard-user-info {
@@ -47,6 +55,7 @@
     border: solid 1px #ccc3c3;
     width: 100%;
     padding: 10px;
+    cursor: pointer;
 }
 
 .Dashboard-user-info a {
@@ -61,4 +70,39 @@
     border-radius: 2px;
     background-color: #ffffff;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.Dashboard-recommended {
+    height: 650px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+.Dashboard-recommended-header {
+    display: flex;
+    justify-content: space-between;
+    z-index: 0;
+}
+
+.Dashboard-recommended-header-title {
+    font-size: 25px;
+}
+
+.Dashboard-recommended-header-dropdown {
+    display: flex;
+    align-items: center;
+}
+
+.Dashboard-recommended-header-dropdown-box {
+    width: 200px;
+    margin-left: 10px;
+}
+
+.Dashboard-recommended-header-dropdown-box select {
+    width: 100%;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
 }
