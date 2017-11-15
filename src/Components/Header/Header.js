@@ -6,6 +6,18 @@ import search from './../../assets/search.png';
 
 
 export default class Header extends Component{
+  constructor(props){
+    super(props);
+    this.state={
+      location: ''
+    }
+  }
+
+  componentDidMount(props){
+    this.setState({
+      location: this.props.location
+    })
+  }
 
   render(){
     return (
@@ -16,8 +28,21 @@ export default class Header extends Component{
           <Link to='/search'><li><img src={search} alt="search"/></li></Link>
         </ul>
 
-        <h2>Dashboard</h2>
-        <h2>Logout</h2>
+        <h2>
+          { (() => {
+            switch (this.state.location) {
+              case "/": return 'Dashboard';
+              case '/profile': return 'Profile';
+              case '/search': return 'Search';
+              default:      return "Dashboard";
+            }
+          }) ()}
+        </h2>
+
+        {/* <a href="http://localhost:3005/auth/logout"> */}
+        <a href="http://localhost:3005/auth/logout">
+          <h2>Logout</h2>
+        </a>
 
       </div>
     )

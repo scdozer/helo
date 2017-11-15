@@ -13,7 +13,19 @@ module.exports = new Auth0Strategy({
     // accessToken is the token to call Auth0 API (not needed in the most cases)
     // extraParams.id_token has the JSON Web Token
     // profile has all the information from the user
-    console.log('profile', profile);
-    return done(null, profile);
+    const db = app.get('db');
+    db.find_user([profile.identities[0].user_id])
+    .then( user => {
+      console.log('user strategy', user)
+      if(user[0]) {
+        return done(null, {id: user[0].id})
+      } else {
+        db.create_user([profile.identities[0].user_id])
+        .then( user => {
+          return done(null, {id: user[0].id})
+        })
+      }
+    })
+    // return done(null, profile);
   }
 );

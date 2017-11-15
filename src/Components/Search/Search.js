@@ -3,11 +3,11 @@ import Header from './../Header/Header';
 import './Search.css';
 
 export default class Search extends Component{
-  
+
   render(){
     return (
       <div className="Search">
-        <Header /> 
+        <Header location={this.props.location.pathname}/>
         Search
       </div>
     )
@@ -20,5 +20,5 @@ export default class Search extends Component{
 //     state
 //   }
 // }
-// 
+//
 // export default connect( mapStateToProps, {addUserId} )( Login );

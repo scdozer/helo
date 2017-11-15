@@ -3,11 +3,11 @@ import Header from './../Header/Header';
 import './Profile.css';
 
 export default class Profile extends Component{
-  
+
   render(){
     return (
       <div className="Profile">
-        <Header />
+        <Header location={this.props.location.pathname}/>
         Profile
       </div>
     )

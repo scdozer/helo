@@ -12,8 +12,9 @@
 	align-items: center;
 	align-content: stretch;
 
-
 }
+
+.Header a {text-decoration: none}
 
 .Header ul {
   margin: 0px;
